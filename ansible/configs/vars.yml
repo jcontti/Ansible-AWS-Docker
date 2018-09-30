@@ -1,0 +1,17 @@
+
+
+# HERE WE ARE GOING TO DEFINE OUR VARS
+
+
+# América del Sur (São Paulo)	
+ec2_region: sa-east-1	
+
+# Ubuntu Server 14.04 64-bit AMI ID
+ami_id: ami-0f1253070285f5e5d
+
+# Instance type
+instance_type: t2.micro	
+
+# Key pair name
+key_name: Administrador-key-pair-brasil
+
