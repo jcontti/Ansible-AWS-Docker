@@ -6,4 +6,4 @@
 *.html
 .#*
 *#
-aws-credentials.yml
+aws_credentials.yml
