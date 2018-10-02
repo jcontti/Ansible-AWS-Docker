@@ -1,0 +1,5 @@
+[local]
+localhost
+
+[ec2_instance]
+54.233.167.87

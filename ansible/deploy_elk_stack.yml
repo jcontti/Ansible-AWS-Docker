@@ -1,0 +1,12 @@
+---
+
+- name: Deploy elk_stack
+  hosts: ec2_instance
+  remote_user: ubuntu
+  gather_facts: False
+
+
+  tasks:
+
+    - name: Copy elk_stack from ansible server to the new instance EC2
+      copy: src=docker/elk_stack dest=/home/ubuntu/

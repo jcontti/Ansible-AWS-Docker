@@ -13,36 +13,31 @@
 
   tasks:
 
-  - name: Create security group
+  - name: Administrador_SG_brasil
     ec2_group:
       ec2_access_key: "{{ AWS_ACCESS_KEY_ID }}"
       ec2_secret_key: "{{ AWS_SECRET_ACCESS_KEY }}"
-      name: docker-elk-wordpress-security-group
-      description: "A Security group"
+      name: Administrador_SG_brasil
+      description: "A Security group of San Paulo region"
       region: "{{ ec2_region }}"
       rules:
         - proto: tcp
-          type: ssh
           from_port: 22
           to_port: 22
           cidr_ip: 0.0.0.0/0
         - proto: tcp
-          type: http
           from_port: 5601
           to_port: 5601
           cidr_ip: 0.0.0.0/0
         - proto: tcp
-          type: http
           from_port: 9200
           to_port: 9200
           cidr_ip: 0.0.0.0/0
         - proto: tcp
-          type: http
           from_port: 8081
           to_port: 8081
           cidr_ip: 0.0.0.0/0
     register: basic_firewall
-
 
   - name: Create EC-2 instance
     ec2:
@@ -54,9 +49,9 @@
       image: "{{ ami_id }}"
       key_name: "{{ key_name }}"
       instance_tags:
-            Name: docker-elk-wordpress
+            Name: manchester_instance
       exact_count: 1
       count_tag:
-            Name: docker-elk-wordpress
+            Name: manchester_instance
       wait: true
     register: ec2
